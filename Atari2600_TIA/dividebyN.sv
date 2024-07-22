@@ -1,6 +1,8 @@
-//SV module for divide by N circuit.
-
-module dividebyN(input [4:0] audf, input clk, output reg d_clk);
+module dividebyN (
+    input [4:0] audf,
+    input clk,
+    output reg d_clk
+);
     reg [4:0] delayVal;
 
     initial begin
@@ -12,8 +14,7 @@ module dividebyN(input [4:0] audf, input clk, output reg d_clk);
         if (delayVal == 0) begin
             delayVal = audf;
             d_clk = ~d_clk;
-        end
-        else if (delayVal != 0) begin
+        end else begin
             delayVal -= 1;
         end
     end

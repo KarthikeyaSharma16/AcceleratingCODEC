@@ -12,7 +12,7 @@ def run_verilog_simulation():
 def main():
     # Generate opcode input
     audio_freq = 0b00101  #  5-bit audio frequency
-    audio_ctrl = 0b1110  #  4-bit audio control
+    audio_ctrl = 0b1000  #  4-bit audio control
     audio_vol = 0b1101  #  4-bit audio volume
     address = 0b110011  #  7-bit address
     opcode_value = (audio_freq << 15) | (audio_ctrl << 11) | (audio_vol << 7) | address

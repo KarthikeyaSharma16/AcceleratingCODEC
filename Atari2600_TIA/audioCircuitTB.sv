@@ -16,8 +16,10 @@ module audioCircuitTB;
 
     initial begin
         $readmemh("opcode.txt", opcode_mem);
+        $display("opcode_mem : %0b", opcode_mem[0]);
         opcode = opcode_mem[0];
-        #100;
+        $display("Opcode : %0b", opcode);
+        #500;
         $display("At time %0t, shift register value: %b", $time, shiftReg);
         $finish();
     end
