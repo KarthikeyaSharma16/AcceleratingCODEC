@@ -7,135 +7,145 @@
 :vpi_module "C:\iverilog\lib\ivl\vhdl_textio.vpi";
 :vpi_module "C:\iverilog\lib\ivl\v2005_math.vpi";
 :vpi_module "C:\iverilog\lib\ivl\va_math.vpi";
-S_00000274569768e0 .scope module, "audioCircuitTB" "audioCircuitTB" 2 3;
+S_000002a09dd395c0 .scope module, "audioCircuitTB" "audioCircuitTB" 2 3;
  .timescale -6 -12;
-v0000027456983f40_0 .var "clk", 0 0;
-v0000027456983fe0_0 .var "opcode", 19 0;
-v00000274569830e0 .array "opcode_mem", 0 0, 19 0;
-v0000027456983720_0 .net "shiftReg", 8 0, v0000027456983180_0;  1 drivers
-S_000002745698a780 .scope module, "uut" "audioCircuit" 2 9, 3 1 0, S_00000274569768e0;
+v000002a09dd8aeb0_0 .var "clk", 0 0;
+v000002a09dd8a190_0 .var "opcode", 19 0;
+v000002a09dd8ac30 .array "opcode_mem", 0 0, 19 0;
+v000002a09dd8a5f0_0 .net "shiftReg", 8 0, v000002a09dd8a9b0_0;  1 drivers
+S_000002a09dd39750 .scope module, "uut" "audioCircuit" 2 9, 3 1 0, S_000002a09dd395c0;
  .timescale -6 -12;
     .port_info 0 /INPUT 20 "opcode";
     .port_info 1 /INPUT 1 "clk";
     .port_info 2 /OUTPUT 9 "shiftReg";
-v00000274569834a0_0 .net "clk", 0 0, v0000027456983f40_0;  1 drivers
-v0000027456983860_0 .net "d_clk", 0 0, v000002745698aaa0_0;  1 drivers
-v0000027456983ae0_0 .net "opcode", 19 0, v0000027456983fe0_0;  1 drivers
-v0000027456983ea0_0 .net "shiftReg", 8 0, v0000027456983180_0;  alias, 1 drivers
-L_0000027456983220 .part v0000027456983fe0_0, 15, 5;
-L_0000027456983b80 .part v0000027456983fe0_0, 11, 4;
-S_000002745698a910 .scope module, "d" "dividebyN" 3 9, 4 1 0, S_000002745698a780;
+v000002a09dd8a690_0 .net "clk", 0 0, v000002a09dd8aeb0_0;  1 drivers
+v000002a09dd8a370_0 .net "d_clk", 0 0, v000002a09dcee2d0_0;  1 drivers
+v000002a09dd8a230_0 .net "opcode", 19 0, v000002a09dd8a190_0;  1 drivers
+v000002a09dd8ab90_0 .net "shiftReg", 8 0, v000002a09dd8a9b0_0;  alias, 1 drivers
+L_000002a09dd8a410 .part v000002a09dd8a190_0, 15, 5;
+L_000002a09dd8aaf0 .part v000002a09dd8a190_0, 11, 4;
+S_000002a09dcee140 .scope module, "d" "dividebyN" 3 9, 4 1 0, S_000002a09dd39750;
  .timescale -6 -12;
     .port_info 0 /INPUT 5 "audf";
     .port_info 1 /INPUT 1 "clk";
     .port_info 2 /OUTPUT 1 "d_clk";
-v000002745686bad0_0 .net "audf", 4 0, L_0000027456983220;  1 drivers
-v000002745686bb70_0 .net "clk", 0 0, v0000027456983f40_0;  alias, 1 drivers
-v000002745698aaa0_0 .var "d_clk", 0 0;
-v000002745698ab40_0 .var "delayVal", 4 0;
-E_00000274568697d0 .event posedge, v000002745686bb70_0;
-S_000002745686ce90 .scope module, "n" "noise_tone_generator" 3 15, 5 1 0, S_000002745698a780;
+v000002a09dd398e0_0 .net "audf", 4 0, L_000002a09dd8a410;  1 drivers
+v000002a09dd39980_0 .net "clk", 0 0, v000002a09dd8aeb0_0;  alias, 1 drivers
+v000002a09dcee2d0_0 .var "d_clk", 0 0;
+v000002a09dcee370_0 .var "delayVal", 4 0;
+E_000002a09dce94b0 .event posedge, v000002a09dd39980_0;
+S_000002a09dcee410 .scope module, "n" "noise_tone_generator" 3 15, 5 1 0, S_000002a09dd39750;
  .timescale -6 -12;
     .port_info 0 /INPUT 1 "clk";
     .port_info 1 /INPUT 4 "audc";
     .port_info 2 /OUTPUT 9 "shift_reg";
-L_000002745698b4a0 .functor AND 9, v0000027456983180_0, L_0000027456983900, C4<111111111>, C4<111111111>;
-v000002745686d020_0 .net *"_ivl_1", 8 0, L_0000027456983900;  1 drivers
-v000002745686d0c0_0 .net *"_ivl_2", 8 0, L_000002745698b4a0;  1 drivers
-v000002745686d160_0 .net "audc", 3 0, L_0000027456983b80;  1 drivers
-v000002745686d200_0 .net "clk", 0 0, v000002745698aaa0_0;  alias, 1 drivers
-v0000027456976e90_0 .var "enable", 15 0;
-v0000027456976f30_0 .net "feedback", 0 0, L_00000274569832c0;  1 drivers
-v0000027456983180_0 .var "shift_reg", 8 0;
-E_0000027456868ed0 .event posedge, v000002745698aaa0_0;
-E_0000027456869950 .event anyedge, v000002745686d160_0;
-L_0000027456983900 .part v0000027456976e90_0, 0, 9;
-L_00000274569832c0 .reduce/xor L_000002745698b4a0;
-    .scope S_000002745698a910;
+L_000002a09dd3b750 .functor AND 9, v000002a09dd8a9b0_0, L_000002a09dd8ad70, C4<111111111>, C4<111111111>;
+v000002a09dd02720_0 .net *"_ivl_1", 8 0, L_000002a09dd8ad70;  1 drivers
+v000002a09dd027c0_0 .net *"_ivl_2", 8 0, L_000002a09dd3b750;  1 drivers
+v000002a09dd02860_0 .net "audc", 3 0, L_000002a09dd8aaf0;  1 drivers
+v000002a09dd02900_0 .net "clk", 0 0, v000002a09dcee2d0_0;  alias, 1 drivers
+v000002a09dd029a0_0 .var "enable", 15 0;
+v000002a09dd02a40_0 .net "feedback", 0 0, L_000002a09dd8a730;  1 drivers
+v000002a09dd8a9b0_0 .var "shift_reg", 8 0;
+E_000002a09dce91b0 .event posedge, v000002a09dcee2d0_0;
+E_000002a09dce98b0 .event anyedge, v000002a09dd02860_0, v000002a09dd029a0_0;
+L_000002a09dd8ad70 .part v000002a09dd029a0_0, 0, 9;
+L_000002a09dd8a730 .reduce/xor L_000002a09dd3b750;
+    .scope S_000002a09dcee140;
 T_0 ;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v000002745698aaa0_0, 0, 1;
-    %load/vec4 v000002745686bad0_0;
-    %store/vec4 v000002745698ab40_0, 0, 5;
+    %store/vec4 v000002a09dcee2d0_0, 0, 1;
+    %pushi/vec4 0, 0, 5;
+    %store/vec4 v000002a09dcee370_0, 0, 5;
     %end;
     .thread T_0;
-    .scope S_000002745698a910;
+    .scope S_000002a09dcee140;
 T_1 ;
-    %wait E_00000274568697d0;
-    %load/vec4 v000002745698ab40_0;
+    %wait E_000002a09dce94b0;
+    %load/vec4 v000002a09dcee370_0;
     %pad/u 32;
     %cmpi/e 0, 0, 32;
     %jmp/0xz  T_1.0, 4;
-    %load/vec4 v000002745686bad0_0;
-    %store/vec4 v000002745698ab40_0, 0, 5;
-    %load/vec4 v000002745698aaa0_0;
+    %load/vec4 v000002a09dd398e0_0;
+    %store/vec4 v000002a09dcee370_0, 0, 5;
+    %load/vec4 v000002a09dcee2d0_0;
     %inv;
-    %store/vec4 v000002745698aaa0_0, 0, 1;
+    %store/vec4 v000002a09dcee2d0_0, 0, 1;
     %jmp T_1.1;
 T_1.0 ;
-    %load/vec4 v000002745698ab40_0;
-    %subi 1, 0, 5;
-    %store/vec4 v000002745698ab40_0, 0, 5;
+    ; show_stmt_assign_vector: Get l-value for compressed -= operand
+    %load/vec4 v000002a09dcee370_0;
+    %pushi/vec4 1, 0, 5;
+    %sub;
+    %store/vec4 v000002a09dcee370_0, 0, 5;
 T_1.1 ;
     %jmp T_1;
     .thread T_1;
-    .scope S_000002745686ce90;
+    .scope S_000002a09dcee410;
 T_2 ;
-    %pushi/vec4 346, 0, 9;
-    %store/vec4 v0000027456983180_0, 0, 9;
+    %pushi/vec4 102, 0, 9;
+    %store/vec4 v000002a09dd8a9b0_0, 0, 9;
     %end;
     .thread T_2;
-    .scope S_000002745686ce90;
+    .scope S_000002a09dcee410;
 T_3 ;
-    %wait E_0000027456869950;
+    %wait E_000002a09dce98b0;
     %pushi/vec4 0, 0, 16;
-    %store/vec4 v0000027456976e90_0, 0, 16;
-    %load/vec4 v000002745686d160_0;
+    %store/vec4 v000002a09dd029a0_0, 0, 16;
+    %load/vec4 v000002a09dd02860_0;
     %pad/u 32;
-    %cmpi/u 16, 0, 32;
+    %cmpi/u 9, 0, 32;
     %jmp/0xz  T_3.0, 5;
     %pushi/vec4 1, 0, 1;
-    %ix/getv 4, v000002745686d160_0;
-    %store/vec4 v0000027456976e90_0, 4, 1;
+    %ix/getv 4, v000002a09dd02860_0;
+    %store/vec4 v000002a09dd029a0_0, 4, 1;
+    %jmp T_3.1;
 T_3.0 ;
+    %pushi/vec4 0, 0, 1;
+    %ix/getv 4, v000002a09dd02860_0;
+    %store/vec4 v000002a09dd029a0_0, 4, 1;
+T_3.1 ;
+    %vpi_call 5 20 "$display", "audc: %b, enable: %b", v000002a09dd02860_0, v000002a09dd029a0_0 {0 0 0};
     %jmp T_3;
     .thread T_3, $push;
-    .scope S_000002745686ce90;
+    .scope S_000002a09dcee410;
 T_4 ;
-    %wait E_0000027456868ed0;
-    %load/vec4 v0000027456976f30_0;
-    %load/vec4 v0000027456983180_0;
+    %wait E_000002a09dce91b0;
+    %load/vec4 v000002a09dd02a40_0;
+    %load/vec4 v000002a09dd8a9b0_0;
     %parti/s 8, 1, 2;
     %concat/vec4; draw_concat_vec4
-    %assign/vec4 v0000027456983180_0, 0;
+    %assign/vec4 v000002a09dd8a9b0_0, 0;
+    %vpi_call 5 28 "$display", "At time %0t, shift_reg: %b", $time, v000002a09dd8a9b0_0 {0 0 0};
     %jmp T_4;
     .thread T_4;
-    .scope S_00000274569768e0;
+    .scope S_000002a09dd395c0;
 T_5 ;
     %pushi/vec4 0, 0, 1;
-    %store/vec4 v0000027456983f40_0, 0, 1;
+    %store/vec4 v000002a09dd8aeb0_0, 0, 1;
     %end;
     .thread T_5;
-    .scope S_00000274569768e0;
+    .scope S_000002a09dd395c0;
 T_6 ;
     %delay 16670000, 0;
-    %load/vec4 v0000027456983f40_0;
+    %load/vec4 v000002a09dd8aeb0_0;
     %inv;
-    %store/vec4 v0000027456983f40_0, 0, 1;
+    %store/vec4 v000002a09dd8aeb0_0, 0, 1;
     %jmp T_6;
     .thread T_6;
-    .scope S_00000274569768e0;
+    .scope S_000002a09dd395c0;
 T_7 ;
-    %vpi_call 2 18 "$readmemh", "opcode.txt", v00000274569830e0 {0 0 0};
-    %vpi_call 2 19 "$display", "opcode_mem : %0b", &A<v00000274569830e0, 0> {0 0 0};
+    %pushi/vec4 50867, 0, 20;
     %ix/load 4, 0, 0;
     %flag_set/imm 4, 0;
-    %load/vec4a v00000274569830e0, 4;
-    %store/vec4 v0000027456983fe0_0, 0, 20;
-    %vpi_call 2 21 "$display", "Opcode : %0b", v0000027456983fe0_0 {0 0 0};
+    %store/vec4a v000002a09dd8ac30, 4, 0;
+    %ix/load 4, 0, 0;
+    %flag_set/imm 4, 0;
+    %load/vec4a v000002a09dd8ac30, 4;
+    %store/vec4 v000002a09dd8a190_0, 0, 20;
+    %vpi_call 2 25 "$display", "Opcode : %0b", v000002a09dd8a190_0 {0 0 0};
     %delay 500000000, 0;
-    %vpi_call 2 23 "$display", "At time %0t, shift register value: %b", $time, v0000027456983720_0 {0 0 0};
-    %vpi_call 2 24 "$finish" {0 0 0};
+    %vpi_call 2 28 "$finish" {0 0 0};
     %end;
     .thread T_7;
 # The file index is used to find the file name in the following table.

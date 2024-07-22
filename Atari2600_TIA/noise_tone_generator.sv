@@ -7,16 +7,17 @@ module noise_tone_generator (
     reg [15:0] enable;
 
     initial begin
-        shift_reg = 9'b101011010; 
+        shift_reg = 9'b001100110; 
     end
 
     // 4x16 Decoder to determine feedback enable signals
     always @(*) begin
         enable = 16'b0;
-        if (audc < 10)
+        if (audc < 9)
             enable[audc] = 1'b1;
         else
             enable[audc] = 1'b0;
+        $display("audc: %b, enable: %b", audc, enable); // Display audc and enable values
     end
 
     // Generate feedback signal
@@ -24,5 +25,6 @@ module noise_tone_generator (
 
     always @(posedge clk) begin
         shift_reg <= {feedback, shift_reg[8:1]};
+        $display("At time %0t, shift_reg: %b", $time, shift_reg);
     end
 endmodule

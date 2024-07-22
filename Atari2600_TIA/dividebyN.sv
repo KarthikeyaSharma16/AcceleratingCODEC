@@ -7,7 +7,7 @@ module dividebyN (
 
     initial begin
         d_clk = 0;
-        delayVal = audf;
+        delayVal = 0;
     end
 
     always @(posedge clk) begin

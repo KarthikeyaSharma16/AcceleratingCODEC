@@ -30,7 +30,7 @@ def play_audio(waveform, sample_rate=44100):
 
 if __name__ == "__main__":
     # Example 9-bit binary value
-    binary_value = '101011010'  # Example 9-bit binary value
+    binary_value = '100011001'  # Example 9-bit binary value
 
     # Convert binary to DAC value
     dac_value = binary_to_int(binary_value)
